@@ -146,30 +146,30 @@ class StoryEngine {
                 }
             },
             'cme': {
-                title: 'Photographer Luna and the Corona Quest',
-                character: 'Luna',
-                age: 11,
-                setting: 'Remote observatory in Canada',
-                theme: 'Coronal Mass Ejections and aurora photography',
+                title: 'Engineer Sam and the Power Grid Crisis',
+                character: 'Sam',
+                age: 13,
+                setting: 'Regional power control center in Vermont',
+                theme: 'Coronal Mass Ejections and electrical infrastructure',
                 pages: 12,
                 illustrations: [
-                    'luna-observatory-setup.png',
-                    'luna-camera-equipment.png',
-                    'luna-cme-alert.png',
-                    'luna-waiting-darkness.png',
-                    'luna-first-aurora.png',
-                    'luna-camera-glitch.png',
-                    'luna-manual-settings.png',
-                    'luna-spectacular-aurora.png',
-                    'luna-time-lapse.png',
-                    'luna-sharing-photos.png',
-                    'luna-science-explanation.png',
-                    'luna-viral-success.png'
+                    'Coronal Mass Ejection/1.png',
+                    'Coronal Mass Ejection/2.png',
+                    'Coronal Mass Ejection/3.png',
+                    'Coronal Mass Ejection/4.png',
+                    'Coronal Mass Ejection/5.png',
+                    'Coronal Mass Ejection/6.png',
+                    'Coronal Mass Ejection/7.png',
+                    'Coronal Mass Ejection/8.png',
+                    'Coronal Mass Ejection/9.png',
+                    'Coronal Mass Ejection/10.png',
+                    'Coronal Mass Ejection/11.png',
+                    'Coronal Mass Ejection/12.png'
                 ],
                 narrative: {
-                    opening: "Luna is a young photographer who loves capturing the night sky. Tonight, she's chasing the perfect aurora shot!",
-                    conflict: "A massive Coronal Mass Ejection heads toward Earth, promising incredible auroras but also causing camera equipment failures.",
-                    resolution: "Luna adapts her technique, captures stunning aurora images, and learns about the Sun-Earth connection while going viral online."
+                    opening: "Sam dreams of becoming a power systems engineer and today she's shadowing the control room operators during a routine shift.",
+                    conflict: "A massive Coronal Mass Ejection races toward Earth, threatening to overload transformers and cause widespread blackouts.",
+                    resolution: "Sam helps the team implement protective protocols, learns about space weather impacts on infrastructure, and witnesses how engineers keep the lights on during extreme space weather events."
                 }
             }
         };
@@ -374,14 +374,78 @@ class StoryEngine {
                 }
             ],
             'cme': [
-                // Similar structure for Luna's photography story
                 {
-                    title: "The Perfect Shot Setup",
-                    text: "Luna adjusts her camera settings at the remote Canadian observatory, excited about tonight's aurora forecast. Her time-lapse setup is perfect, but she doesn't know that a massive Coronal Mass Ejection is heading straight for Earth!",
-                    choices: ["Check camera battery levels", "Review aurora photography tips", "Monitor space weather alerts"],
-                    hotspots: [{ x: 40, y: 50, fact: "CMEs can travel from Sun to Earth in just 15 hours!" }]
+                    title: "Control Center Apprentice",
+                    text: "Sam adjusts her visitor badge as she enters the Vermont Regional Power Control Center for her summer internship. The massive control room buzzes with activity as engineers monitor electricity flowing to thousands of homes. 'Today should be quiet,' says Chief Operator Rodriguez, not knowing that a massive Coronal Mass Ejection is racing toward Earth!",
+                    choices: ["Ask about the control systems", "Study the power grid displays", "Learn about transformer monitoring"],
+                    hotspots: [{ x: 65, y: 35, fact: "Power grids carry electricity across hundreds of miles through high-voltage lines!" }]
                 },
-                // Continue with 11 more pages for Luna's story...
+                {
+                    title: "Morning Grid Operations",
+                    text: "Sam watches as operators balance electricity supply and demand across New England. The morning peak is starting as people wake up and turn on lights, coffee makers, and computers. Everything runs smoothly through a network of power plants, transmission lines, and substations. But 93 million miles away, the Sun has just launched a billion-ton cloud of charged particles directly at Earth!",
+                    choices: ["Learn about power demand patterns", "Study transmission line monitoring", "Ask about backup systems"],
+                    hotspots: [{ x: 45, y: 60, fact: "The power grid must balance supply and demand every second of every day!" }]
+                },
+                {
+                    title: "Space Weather Alert",
+                    text: "A computer screen flashes yellow: 'NOAA SPACE WEATHER ALERT - CME DETECTED.' Chief Rodriguez notices immediately. 'Sam, this is perfect timing for you to learn,' she says. 'A Coronal Mass Ejection left the Sun yesterday and it's heading our way. We need to prepare the grid for potential impacts.' Sam remembers her physics class about magnetic fields and electric currents.",
+                    choices: ["Ask about CME effects on power grids", "Study the space weather data", "Learn about grid protection protocols"],
+                    hotspots: [{ x: 50, y: 40, fact: "CMEs can cause geomagnetically induced currents that flow through power lines!" }]
+                },
+                {
+                    title: "Understanding the Threat",
+                    text: "Engineer Martinez explains to Sam how CMEs work: 'When charged particles hit Earth's magnetic field, they create electric currents in the upper atmosphere. These currents can induce extra electricity in our power lines and transformers. It's like the Earth becomes a giant generator!' Sam realizes that space weather isn't just about pretty auroras - it can seriously affect the technology we depend on.",
+                    choices: ["Learn about geomagnetically induced currents", "Study transformer vulnerability", "Ask about historical power outages"],
+                    hotspots: [{ x: 40, y: 70, fact: "The 1989 Quebec blackout was caused by a geomagnetic storm!" }]
+                },
+                {
+                    title: "Protective Measures Begin",
+                    text: "The control room springs into action. Operators start reducing power loads on the most vulnerable transmission lines. Sam helps by monitoring transformer temperatures and current flows. 'We're like storm chasers,' Rodriguez explains, 'but instead of tracking hurricanes, we're preparing for an invisible storm from space that could overload our equipment!'",
+                    choices: ["Help monitor transmission lines", "Assist with load reduction procedures", "Track transformer status"],
+                    hotspots: [{ x: 60, y: 30, fact: "Large transformers can take months to replace if damaged by space weather!" }]
+                },
+                {
+                    title: "The CME Arrives",
+                    text: "At 2:47 PM, the space weather monitoring systems show the CME has reached Earth. Sam watches the magnetometer readings spike as Earth's magnetic field gets compressed and twisted. 'Here we go,' whispers Martinez. The room fills with tension as everyone monitors their systems, ready to respond to any power grid disturbances caused by the space weather event.",
+                    choices: ["Monitor magnetic field readings", "Watch for grid disturbances", "Help coordinate response teams"],
+                    hotspots: [{ x: 35, y: 55, fact: "Earth's magnetic field can be compressed to half its normal size during intense CMEs!" }]
+                },
+                {
+                    title: "Grid Under Stress",
+                    text: "Alarms start chiming softly as geomagnetically induced currents begin flowing through the transmission lines. Sam sees transformer temperatures rising at three substations. The team works calmly but quickly, rerouting power and reducing loads to protect equipment. 'This is exactly why we train for space weather events,' Rodriguez tells Sam as they coordinate with neighboring utilities.",
+                    choices: ["Help with power rerouting", "Monitor substation temperatures", "Assist with utility coordination"],
+                    hotspots: [{ x: 55, y: 45, fact: "Power grids have automatic protection systems that disconnect equipment during emergencies!" }]
+                },
+                {
+                    title: "Critical Decision Point",
+                    text: "A major transformer in Montpelier shows dangerous current levels. Sam watches as Chief Rodriguez makes a critical decision: 'We need to temporarily disconnect that substation to protect the transformer.' This will cause a brief power outage for 15,000 customers, but it prevents equipment damage that could cause outages lasting weeks. Sam realizes how space weather forces difficult but necessary decisions.",
+                    choices: ["Support the disconnection procedure", "Help notify emergency services", "Monitor backup power systems"],
+                    hotspots: [{ x: 45, y: 65, fact: "Sometimes preventing damage requires temporary outages - it's the lesser of two evils!" }]
+                },
+                {
+                    title: "Community Communication",
+                    text: "While the technical team handles the grid, Sam helps the communications team notify local emergency services and media about the temporary outage. 'People need to understand this isn't a normal power failure,' explains Communications Manager Chen. 'This is us protecting the grid from space weather - like taking shelter during a hurricane.' Sam drafts social media posts explaining the situation in simple terms.",
+                    choices: ["Help draft public communications", "Coordinate with emergency services", "Monitor social media response"],
+                    hotspots: [{ x: 30, y: 50, fact: "Public communication during space weather events helps prevent panic and misinformation!" }]
+                },
+                {
+                    title: "Aurora Bonus",
+                    text: "As evening approaches, the same CME that stressed the power grid creates spectacular green and red auroras visible even in Vermont - much farther south than usual! Sam and the team take a break to watch from the control center's observation deck. 'Beauty and danger from the same source,' muses Rodriguez. Sam takes photos to share with her classmates, explaining how space weather creates both challenges and wonders.",
+                    choices: ["Photograph the aurora", "Learn about aurora colors", "Share the experience online"],
+                    hotspots: [{ x: 50, y: 25, fact: "Strong geomagnetic storms can make auroras visible as far south as Florida!" }]
+                },
+                {
+                    title: "Recovery and Restoration",
+                    text: "As the geomagnetic storm subsides, the team begins restoring normal operations. The Montpelier substation comes back online without any damage - the protective disconnection worked perfectly. Sam helps operators gradually increase power loads back to normal levels. 'We kept the lights on for 99.8% of our customers during a major space weather event,' Rodriguez announces proudly.",
+                    choices: ["Assist with system restoration", "Document lessons learned", "Calculate outage statistics"],
+                    hotspots: [{ x: 40, y: 75, fact: "Modern power grids are designed to automatically restore themselves after protective shutdowns!" }]
+                },
+                {
+                    title: "Future Grid Engineer",
+                    text: "As Sam's internship day ends, she's filled with excitement about power systems engineering. 'Today you saw how we blend old-school electrical engineering with cutting-edge space science,' Rodriguez tells her. Sam decides to study both electrical engineering and space physics, inspired by the challenge of protecting critical infrastructure from space weather. She now knows that keeping the lights on requires understanding both Earth and space!",
+                    choices: ["Research power systems careers", "Study space weather engineering", "Plan her educational future"],
+                    hotspots: [{ x: 55, y: 40, fact: "The next generation of power engineers must understand both electricity and space weather!" }]
+                }
             ]
         };
         

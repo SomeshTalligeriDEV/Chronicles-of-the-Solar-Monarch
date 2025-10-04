@@ -1,0 +1,568 @@
+/* ===============================================
+   CHRONICLES OF THE SOLAR MONARCH - ANIMATIONS
+   Advanced CSS animations and transitions
+   =============================================== */
+
+/* ===============================================
+   WARP TRANSITION ANIMATIONS
+   =============================================== */
+
+@keyframes warp-tunnel {
+    0% {
+        transform: scale(0.1) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(50) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes particle-explosion {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes asteroid-dodge {
+    0% { transform: translateX(-100px) rotate(0deg); }
+    25% { transform: translateX(25vw) rotate(90deg); }
+    50% { transform: translateX(50vw) rotate(180deg); }
+    75% { transform: translateX(75vw) rotate(270deg); }
+    100% { transform: translateX(calc(100vw + 100px)) rotate(360deg); }
+}
+
+@keyframes magnetosphere-ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ===============================================
+   STORY INTERFACE ANIMATIONS
+   =============================================== */
+
+@keyframes page-slide-in-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes page-slide-in-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes page-slide-out-left {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes page-slide-out-right {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes hotspot-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
+    }
+}
+
+@keyframes ar-overlay-appear {
+    0% {
+        transform: scale(0) rotate(180deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* ===============================================
+   DASHBOARD VISUALIZATIONS
+   =============================================== */
+
+@keyframes globe-rotation {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+@keyframes data-stream {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes alert-flash {
+    0%, 50%, 100% { background-color: transparent; }
+    25%, 75% { background-color: rgba(238, 108, 77, 0.2); }
+}
+
+@keyframes metric-count-up {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===============================================
+   MULTIPLAYER GAME ANIMATIONS
+   =============================================== */
+
+@keyframes quiz-card-flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(-90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes score-popup {
+    0% {
+        transform: scale(0) rotate(-10deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2) rotate(5deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes leaderboard-entry {
+    0% {
+        transform: translateX(-100%) scale(0.8);
+        opacity: 0;
+    }
+    70% {
+        transform: translateX(10%) scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===============================================
+   AI TUTOR CHAT ANIMATIONS
+   =============================================== */
+
+@keyframes message-bubble-in {
+    0% {
+        transform: scale(0.3) translateY(20px);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05) translateY(-5px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes typing-indicator {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    30% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+@keyframes chat-input-focus {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
+    }
+}
+
+/* ===============================================
+   ACHIEVEMENT SYSTEM ANIMATIONS
+   =============================================== */
+
+@keyframes achievement-slide-in {
+    0% {
+        transform: translateX(100%) scale(0.8);
+        opacity: 0;
+    }
+    20% {
+        transform: translateX(-10%) scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes achievement-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes badge-shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* ===============================================
+   PARTICLE SYSTEM ANIMATIONS
+   =============================================== */
+
+@keyframes star-twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes comet-trail {
+    0% {
+        transform: translateX(-100px) translateY(50px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(100vw + 100px)) translateY(-50px);
+        opacity: 0;
+    }
+}
+
+@keyframes nebula-drift {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(10px, -5px) rotate(90deg); }
+    50% { transform: translate(0, -10px) rotate(180deg); }
+    75% { transform: translate(-10px, -5px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes plasma-flow {
+    0% {
+        background-position: 0% 50%;
+        transform: scale(1);
+    }
+    50% {
+        background-position: 100% 50%;
+        transform: scale(1.05);
+    }
+    100% {
+        background-position: 0% 50%;
+        transform: scale(1);
+    }
+}
+
+/* ===============================================
+   LOADING AND STATE TRANSITIONS
+   =============================================== */
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ===============================================
+   INTERACTIVE HOVER STATES
+   =============================================== */
+
+@keyframes button-hover-glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(0, 245, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
+    }
+}
+
+@keyframes card-hover-lift {
+    0% {
+        transform: translateY(0) rotateX(0);
+    }
+    100% {
+        transform: translateY(-15px) rotateX(5deg);
+    }
+}
+
+@keyframes icon-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+/* ===============================================
+   RESPONSIVE ANIMATION CLASSES
+   =============================================== */
+
+.animate-warp {
+    animation: warp-tunnel 5s ease-out forwards;
+}
+
+.animate-explosion {
+    animation: particle-explosion 1s ease-out forwards;
+}
+
+.animate-dodge {
+    animation: asteroid-dodge 3s linear forwards;
+}
+
+.animate-slide-left {
+    animation: page-slide-in-left 0.5s ease-out;
+}
+
+.animate-slide-right {
+    animation: page-slide-in-right 0.5s ease-out;
+}
+
+.animate-pulse {
+    animation: hotspot-pulse 2s ease-in-out infinite;
+}
+
+.animate-ar-appear {
+    animation: ar-overlay-appear 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animate-globe {
+    animation: globe-rotation 20s linear infinite;
+}
+
+.animate-data-stream {
+    animation: data-stream 3s ease-in-out infinite;
+}
+
+.animate-alert {
+    animation: alert-flash 1s ease-in-out 3;
+}
+
+.animate-count-up {
+    animation: metric-count-up 0.8s ease-out;
+}
+
+.animate-flip {
+    animation: quiz-card-flip 0.6s ease-in-out;
+}
+
+.animate-score {
+    animation: score-popup 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animate-message {
+    animation: message-bubble-in 0.4s ease-out;
+}
+
+.animate-achievement {
+    animation: achievement-slide-in 0.8s ease-out;
+}
+
+.animate-twinkle {
+    animation: star-twinkle 2s ease-in-out infinite;
+}
+
+.animate-comet {
+    animation: comet-trail 5s linear infinite;
+}
+
+.animate-nebula {
+    animation: nebula-drift 10s ease-in-out infinite;
+}
+
+.animate-fade-in {
+    animation: fade-in-up 0.6s ease-out;
+}
+
+/* ===============================================
+   PERFORMANCE OPTIMIZATIONS
+   =============================================== */
+
+.will-animate {
+    will-change: transform, opacity;
+}
+
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* ===============================================
+   MEDIA QUERIES FOR ANIMATION PREFERENCES
+   =============================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-warp,
+    .animate-explosion,
+    .animate-dodge,
+    .animate-globe,
+    .animate-comet,
+    .animate-nebula {
+        animation: none;
+    }
+    
+    .animate-slide-left,
+    .animate-slide-right {
+        animation: fade-in-up 0.3s ease-out;
+    }
+    
+    .animate-pulse {
+        animation: none;
+        opacity: 0.8;
+    }
+}
+
+/* ===============================================
+   ANIMATION UTILITY CLASSES
+   =============================================== */
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+.duration-fast { animation-duration: 0.2s; }
+.duration-normal { animation-duration: 0.4s; }
+.duration-slow { animation-duration: 0.8s; }
+
+.ease-bounce { animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.ease-smooth { animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+.infinite { animation-iteration-count: infinite; }
+.once { animation-iteration-count: 1; }
+
+.paused { animation-play-state: paused; }
+.running { animation-play-state: running; }

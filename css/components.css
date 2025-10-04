@@ -1,0 +1,1058 @@
+/* ===============================================
+   CHRONICLES OF THE SOLAR MONARCH - COMPONENTS
+   Specialized UI components and layouts
+   =============================================== */
+
+/* ===============================================
+   STORY CONTAINER & NAVIGATION
+   =============================================== */
+
+.story-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--hero-gradient);
+    position: relative;
+    overflow: hidden;
+}
+
+.story-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--card-border);
+    z-index: 100;
+    flex-shrink: 0;
+}
+
+.story-nav-btn {
+    background: linear-gradient(45deg, var(--nebula-purple), var(--nebula-blue));
+    border: none;
+    color: var(--text-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-family: var(--font-primary);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-weight: bold;
+}
+
+.story-nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(106, 76, 147, 0.4);
+}
+
+.story-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.story-progress {
+    flex: 1;
+    margin: 0 2rem;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--hologram-cyan), var(--aurora-green));
+    border-radius: 3px;
+    transition: width 0.5s ease-out;
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+}
+
+.page-indicator {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ===============================================
+   STORY CONTENT LAYOUT
+   =============================================== */
+
+.story-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+/* Visual Novel Layout - Visual Panel (Top) */
+.story-visual-panel {
+    flex: 0 0 60%;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    border-bottom: 2px solid var(--card-border);
+}
+
+.visual-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-visual {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.story-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-illustration {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--card-bg);
+    overflow: hidden;
+}
+
+.story-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+/* Visual Controls */
+.visual-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    z-index: 50;
+}
+
+.visual-control-btn {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(5px);
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visual-control-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+/* Character Dialogue Overlay */
+.dialogue-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 40;
+}
+
+.dialogue-overlay.active {
+    opacity: 1;
+}
+
+.character-dialogue {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.character-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--solar-orange), var(--plasma-pink));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.dialogue-bubble {
+    flex: 1;
+}
+
+.character-name {
+    color: var(--hologram-cyan);
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.dialogue-text {
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.story-hotspots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.hotspot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--hologram-cyan);
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: all;
+    animation: hotspot-pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 10px var(--hologram-cyan);
+}
+
+.hotspot:hover {
+    transform: scale(1.5);
+    animation-play-state: paused;
+}
+
+.ar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(0, 245, 255, 0.1) 50%,
+        transparent 60%
+    );
+    opacity: 0;
+    transition: var(--transition-smooth);
+    pointer-events: none;
+}
+
+.ar-overlay.active {
+    opacity: 1;
+    animation: ar-overlay-appear 0.8s ease-out;
+}
+
+/* ===============================================
+   STORY TEXT & INTERACTIONS
+   =============================================== */
+
+/* Visual Novel Layout - Text Panel (Bottom) */
+.story-text-panel {
+    flex: 0 0 40%;
+    background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--accent-bg) 100%);
+    overflow-y: auto;
+    border-top: 1px solid var(--card-border);
+}
+
+.story-text {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    border-radius: 0;
+}
+
+#story-title {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    color: var(--hologram-cyan);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.narrative-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.narrative-text p {
+    margin-bottom: 1rem;
+}
+
+.story-choices {
+    margin: 2rem 0;
+}
+
+.choice-btn {
+    display: block;
+    width: 100%;
+    background: rgba(0, 245, 255, 0.1);
+    border: 2px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    text-align: left;
+    font-size: 1rem;
+}
+
+.choice-btn:hover {
+    background: rgba(0, 245, 255, 0.2);
+    border-color: var(--hologram-cyan);
+    transform: translateX(10px);
+}
+
+.story-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.control-btn {
+    background: var(--accent-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-size: 0.9rem;
+}
+
+.control-btn:hover {
+    background: var(--hologram-cyan);
+    color: var(--primary-bg);
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.4);
+}
+
+.control-btn.active {
+    background: var(--aurora-green);
+    color: var(--primary-bg);
+}
+
+/* ===============================================
+   DASHBOARD COMPONENTS
+   =============================================== */
+
+.dashboard-section {
+    min-height: 100vh;
+    padding: 100px 2rem 2rem;
+    background: var(--hero-gradient);
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--hologram-cyan);
+    margin-bottom: 3rem;
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 600px;
+}
+
+.dashboard-card {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-glow);
+    overflow: hidden;
+}
+
+.globe-card {
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.globe-canvas {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    box-shadow: 
+        inset 0 0 50px rgba(0, 245, 255, 0.2),
+        0 0 50px rgba(0, 245, 255, 0.3);
+}
+
+.metrics-card h3,
+.alerts-card h3 {
+    font-family: var(--font-primary);
+    color: var(--hologram-cyan);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    height: 100%;
+}
+
+.metric-item {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.metric-value {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    color: var(--aurora-green);
+    font-weight: bold;
+}
+
+.metric-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.alerts-feed {
+    height: calc(100% - 50px);
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.alert-item {
+    background: rgba(238, 108, 77, 0.1);
+    border-left: 4px solid var(--solar-orange);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0 10px 10px 0;
+    animation: alert-flash 1s ease-in-out;
+}
+
+.alert-time {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.alert-text {
+    margin-top: 0.5rem;
+    color: var(--text-primary);
+}
+
+/* ===============================================
+   MULTIPLAYER COMPONENTS
+   =============================================== */
+
+.multiplayer-section {
+    min-height: 100vh;
+    padding: 100px 2rem 2rem;
+    background: var(--hero-gradient);
+}
+
+.multiplayer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.arena-modes {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.mode-btn {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    backdrop-filter: blur(10px);
+}
+
+.mode-btn:hover,
+.mode-btn.active {
+    background: linear-gradient(45deg, var(--hologram-cyan), var(--aurora-green));
+    color: var(--primary-bg);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 245, 255, 0.4);
+}
+
+.game-area {
+    min-height: 400px;
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-glow);
+}
+
+.quiz-container {
+    text-align: center;
+}
+
+.quiz-question {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.quiz-option {
+    background: rgba(0, 245, 255, 0.1);
+    border: 2px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-size: 1rem;
+}
+
+.quiz-option:hover {
+    background: rgba(0, 245, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.quiz-option.correct {
+    background: rgba(6, 255, 165, 0.3);
+    border-color: var(--aurora-green);
+}
+
+.quiz-option.incorrect {
+    background: rgba(238, 108, 77, 0.3);
+    border-color: var(--solar-orange);
+}
+
+.leaderboard {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.leaderboard-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    animation: leaderboard-entry 0.5s ease-out;
+}
+
+.leaderboard-rank {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--hologram-cyan);
+    font-weight: bold;
+    min-width: 3rem;
+}
+
+.leaderboard-name {
+    flex: 1;
+    color: var(--text-primary);
+    margin-left: 1rem;
+}
+
+.leaderboard-score {
+    font-family: var(--font-mono);
+    color: var(--aurora-green);
+    font-weight: bold;
+}
+
+/* ===============================================
+   AI TUTOR INTERFACE
+   =============================================== */
+
+.ai-tutor-section {
+    min-height: 100vh;
+    padding: 100px 2rem 2rem;
+    background: var(--hero-gradient);
+}
+
+.tutor-interface {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 2rem;
+    height: 600px;
+}
+
+.chat-container {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-glow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message {
+    display: flex;
+    gap: 1rem;
+    animation: message-bubble-in 0.4s ease-out;
+}
+
+.message.user-message {
+    flex-direction: row-reverse;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--hologram-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.user-message .message-avatar {
+    background: var(--aurora-green);
+}
+
+.message-content {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    max-width: 70%;
+    border: 1px solid var(--card-border);
+}
+
+.user-message .message-content {
+    background: rgba(0, 245, 255, 0.1);
+    border-color: var(--hologram-cyan);
+}
+
+.chat-input-container {
+    display: flex;
+    padding: 1rem 2rem 2rem;
+    gap: 1rem;
+    border-top: 1px solid var(--card-border);
+}
+
+.chat-input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 1rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+
+.chat-input:focus {
+    outline: none;
+    border-color: var(--hologram-cyan);
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+}
+
+.send-btn {
+    background: linear-gradient(45deg, var(--hologram-cyan), var(--aurora-green));
+    border: none;
+    color: var(--primary-bg);
+    padding: 1rem 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-size: 1.2rem;
+}
+
+.send-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 245, 255, 0.4);
+}
+
+.tutor-suggestions {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-glow);
+}
+
+.tutor-suggestions h4 {
+    color: var(--hologram-cyan);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.suggestion-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.chip {
+    background: rgba(0, 245, 255, 0.1);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-size: 0.9rem;
+}
+
+.chip:hover {
+    background: rgba(0, 245, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 245, 255, 0.3);
+}
+
+/* ===============================================
+   ACHIEVEMENT TOAST
+   =============================================== */
+
+.achievement-toast {
+    position: fixed;
+    top: 100px;
+    right: 2rem;
+    background: var(--card-bg);
+    border: 2px solid var(--aurora-green);
+    border-radius: 15px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(6, 255, 165, 0.4);
+    z-index: var(--z-modal);
+    animation: achievement-slide-in 0.8s ease-out;
+}
+
+.achievement-icon {
+    font-size: 2rem;
+    animation: achievement-bounce 1s ease-out 0.5s;
+}
+
+.achievement-title {
+    color: var(--aurora-green);
+    font-family: var(--font-primary);
+    margin-bottom: 0.2rem;
+}
+
+.achievement-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ===============================================
+   JUDGE PANEL
+   =============================================== */
+
+.judge-panel {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: var(--z-modal);
+}
+
+.judge-toggle {
+    background: linear-gradient(45deg, var(--solar-orange), var(--plasma-pink));
+    border: none;
+    color: var(--text-primary);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    font-family: var(--font-primary);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 5px 15px rgba(238, 108, 77, 0.4);
+}
+
+.judge-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(238, 108, 77, 0.6);
+}
+
+.judge-content {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    width: 400px;
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-glow);
+    transform: translateY(20px) scale(0.9);
+    opacity: 0;
+    transition: var(--transition-smooth);
+    pointer-events: none;
+}
+
+.judge-panel.active .judge-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.judge-content h3 {
+    color: var(--hologram-cyan);
+    font-family: var(--font-primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.judge-content .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.judge-content .metric {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+}
+
+.impact-statement {
+    background: rgba(6, 255, 165, 0.1);
+    border: 1px solid var(--aurora-green);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.impact-statement strong {
+    color: var(--aurora-green);
+}
+
+/* ===============================================
+   FOOTER
+   =============================================== */
+
+.main-footer {
+    background: var(--secondary-bg);
+    border-top: 1px solid var(--card-border);
+    padding: 3rem 2rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    color: var(--hologram-cyan);
+    font-family: var(--font-primary);
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-section ul li a:hover {
+    color: var(--hologram-cyan);
+}
+
+.qr-code {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+#qr-canvas {
+    border: 2px solid var(--card-border);
+    border-radius: 10px;
+}
+
+.share-btn {
+    background: var(--accent-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.share-btn:hover {
+    background: var(--hologram-cyan);
+    color: var(--primary-bg);
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.4);
+}
+
+/* ===============================================
+   RESPONSIVE COMPONENTS
+   =============================================== */
+
+@media (max-width: 768px) {
+    /* Visual Novel Mobile Layout */
+    .story-visual-panel {
+        flex: 0 0 50%;
+    }
+    
+    .story-text-panel {
+        flex: 0 0 50%;
+    }
+    
+    .story-text {
+        padding: 1rem;
+    }
+    
+    .visual-controls {
+        flex-direction: row;
+        bottom: 20px;
+        top: auto;
+        right: 20px;
+    }
+    
+    .dialogue-overlay {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .story-content {
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        height: auto;
+    }
+    
+    .globe-card {
+        grid-row: auto;
+    }
+    
+    .arena-modes {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .tutor-interface {
+        height: 500px;
+    }
+    
+    .judge-content {
+        width: 300px;
+    }
+    
+    .judge-content .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}

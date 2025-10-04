@@ -126,18 +126,18 @@ class StoryEngine {
                 theme: 'Geomagnetic storms and aviation',
                 pages: 12,
                 illustrations: [
-                    'alex-cockpit-view.png',
-                    'alex-radio-static.png',
-                    'alex-compass-spinning.png',
-                    'alex-aurora-window.png',
-                    'alex-backup-navigation.png',
-                    'alex-crew-teamwork.png',
-                    'alex-passenger-calming.png',
-                    'alex-ground-control.png',
-                    'alex-safe-landing.png',
-                    'alex-aurora-photos.png',
-                    'alex-learning-magnetism.png',
-                    'alex-future-pilot.png'
+                    'geomagneticstrom/1.png',
+                    'geomagneticstrom/2.png',
+                    'geomagneticstrom/3.png',
+                    'geomagneticstrom/4.png',
+                    'geomagneticstrom/5.png',
+                    'geomagneticstrom/6.png',
+                    'geomagneticstrom/7.png',
+                    'geomagneticstrom/8.png',
+                    'geomagneticstrom/9.png',
+                    'geomagneticstrom/10.png',
+                    'geomagneticstrom/11.png',
+                    'geomagneticstrom/12.png'
                 ],
                 narrative: {
                     opening: "Alex dreams of becoming a pilot and today she's in the cockpit as a junior observer on a flight to Alaska!",
@@ -300,14 +300,78 @@ class StoryEngine {
                 }
             ],
             'geomagnetic-storm': [
-                // Similar structure for Alex's pilot story
                 {
                     title: "Junior Observer Alex",
                     text: "Alex buckles into the cockpit jump seat, her pilot badge gleaming. Captain Sarah explains the flight path to Anchorage as they taxi for takeoff. Alex dreams of flying her own plane someday, not knowing that space weather is about to test the crew's skills!",
                     choices: ["Ask about navigation systems", "Study the flight instruments", "Look for weather patterns"],
                     hotspots: [{ x: 70, y: 30, fact: "Commercial pilots must understand space weather effects!" }]
                 },
-                // Continue with 11 more pages for Alex's story...
+                {
+                    title: "Takeoff and Clear Skies",
+                    text: "The aircraft lifts smoothly into the bright morning sky. Alex watches the ground shrink below as Captain Sarah points out the navigation displays. Everything seems perfect for their flight to Alaska, but high above Earth's atmosphere, charged particles from a recent solar flare are beginning to interact with our planet's magnetic field.",
+                    choices: ["Learn about the flight route", "Ask about weather monitoring", "Study the radio equipment"],
+                    hotspots: [{ x: 45, y: 60, fact: "Planes fly at 35,000 feet, but space weather affects us from 50+ miles up!" }]
+                },
+                {
+                    title: "First Signs of Trouble",
+                    text: "As they cruise over Canada, the radio crackles with unusual static. Co-pilot Mike frowns at the navigation display - the GPS readings are starting to drift slightly. 'Might be some space weather,' Captain Sarah mentions calmly. Alex remembers her science class about Earth's magnetic field protecting us from solar particles.",
+                    choices: ["Ask about space weather effects", "Monitor the instruments", "Listen to air traffic control"],
+                    hotspots: [{ x: 55, y: 40, fact: "GPS satellites orbit 12,500 miles above Earth in the radiation-filled magnetosphere!" }]
+                },
+                {
+                    title: "Radio Communications Disrupted",
+                    text: "Suddenly, the radio fills with static and voices fade in and out. Air traffic control in Edmonton sounds distant and choppy. Alex notices the compass spinning slightly - something she's never seen before. The geomagnetic storm is intensifying, and their airplane is flying right through its effects!",
+                    choices: ["Try different radio frequencies", "Check backup communication systems", "Monitor the magnetic compass"],
+                    hotspots: [{ x: 35, y: 70, fact: "Radio waves bounce off Earth's ionosphere, which gets disturbed during geomagnetic storms!" }]
+                },
+                {
+                    title: "Navigation Challenges",
+                    text: "The GPS shows their position jumping around by several miles. Captain Sarah switches to backup navigation systems, using ground-based radio beacons and old-fashioned dead reckoning. 'This is why we train for multiple navigation methods,' she explains to Alex, who watches in fascination as the crew adapts.",
+                    choices: ["Learn about backup navigation", "Calculate position manually", "Monitor other aircraft"],
+                    hotspots: [{ x: 60, y: 25, fact: "Before GPS, pilots navigated using stars, radio beacons, and careful calculations!" }]
+                },
+                {
+                    title: "The Science Explained",
+                    text: "Co-pilot Mike explains to Alex how charged particles from the Sun interact with Earth's magnetic field, creating the beautiful aurora but also disrupting technology. 'It's like the Earth is wearing a magnetic shield,' he says, 'but sometimes particles leak through at the poles, right where we're flying!'",
+                    choices: ["Ask about Earth's magnetic field", "Learn about aurora formation", "Study the storm's effects"],
+                    hotspots: [{ x: 50, y: 55, fact: "Earth's magnetic field protects us, but it's weaker at the magnetic poles!" }]
+                },
+                {
+                    title: "Teamwork in the Cockpit",
+                    text: "The crew works together like a well-oiled machine. Captain Sarah flies the plane while Mike handles communications and navigation. Alex helps by monitoring instruments and taking notes. Even with the space weather challenges, the professional teamwork keeps everyone safe and on course.",
+                    choices: ["Assist with instrument monitoring", "Help with flight calculations", "Support crew communication"],
+                    hotspots: [{ x: 40, y: 45, fact: "Commercial aviation has multiple backup systems for exactly these situations!" }]
+                },
+                {
+                    title: "Passenger Reassurance",
+                    text: "Some passengers notice the radio static and ask about the slight changes in flight path. Flight attendant Lisa calmly explains they're experiencing minor space weather effects - like a storm, but in space! Alex realizes how important it is to stay calm and informed during unusual situations.",
+                    choices: ["Help explain space weather", "Assist with passenger questions", "Monitor the situation"],
+                    hotspots: [{ x: 65, y: 35, fact: "Most passengers never notice space weather effects, thanks to skilled pilots!" }]
+                },
+                {
+                    title: "Ground Control Coordination",
+                    text: "Air traffic controllers across the region coordinate carefully as multiple flights experience similar navigation issues. They use backup radar systems and increase spacing between aircraft. Alex marvels at how the entire aviation system has protocols for space weather events.",
+                    choices: ["Listen to air traffic control", "Learn about backup systems", "Track other flights"],
+                    hotspots: [{ x: 30, y: 50, fact: "Air traffic control has special procedures for space weather events!" }]
+                },
+                {
+                    title: "Aurora Spectacular",
+                    text: "As they approach Alaska in the early evening, Alex gasps at the most incredible sight - brilliant green and purple auroras dancing across the entire sky! The same geomagnetic storm causing their navigation troubles is creating this magnificent light show. Passengers press against windows in amazement.",
+                    choices: ["Take photos of the aurora", "Learn about aurora colors", "Share the view with passengers"],
+                    hotspots: [{ x: 50, y: 20, fact: "Auroras occur 60-200 miles above Earth - much higher than planes fly!" }]
+                },
+                {
+                    title: "Successful Landing",
+                    text: "Despite the space weather challenges, Captain Sarah makes a perfect landing in Anchorage. The ground crew reports that the aurora is one of the strongest they've seen this year. Alex feels proud to have been part of a flight crew that safely navigated through a geomagnetic storm.",
+                    choices: ["Celebrate the successful flight", "Document the experience", "Plan future flights"],
+                    hotspots: [{ x: 55, y: 65, fact: "Alaska sees auroras regularly because it's close to the magnetic north pole!" }]
+                },
+                {
+                    title: "Future Space Weather Pilot",
+                    text: "As they taxi to the gate, Alex asks Captain Sarah about becoming a pilot who specializes in space weather operations. 'We need more pilots who understand these effects,' Sarah smiles. Alex decides to study both aviation and space science, inspired by this incredible flight through a geomagnetic storm. She now knows that pilots need to understand space weather to keep flights safe!",
+                    choices: ["Research pilot training programs", "Study space weather careers", "Plan her aviation future"],
+                    hotspots: [{ x: 45, y: 75, fact: "The FAA now requires pilots to learn about space weather effects on aviation!" }]
+                }
             ],
             'cme': [
                 // Similar structure for Luna's photography story

@@ -1,5 +1,4 @@
 # 🌟 Chronicles of the Solar Monarch
-
 > **NASA-Powered Space Weather Adventures for Young Explorers**
 
 A hackathon-winning Progressive Web App that combines real NASA space weather data with interactive storytelling, creating an immersive educational experience for children aged 8-14. Built with vanilla HTML5, CSS3, and JavaScript for maximum performance and accessibility.
